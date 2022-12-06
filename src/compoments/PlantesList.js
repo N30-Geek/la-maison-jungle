@@ -23,12 +23,14 @@ function ShoppingList() {
                         <li key={plant.id} className='lmj-plant-item'>
                             <div className="lmj-sales">
                                 {plant.name}{plant.isBestSale ? <span>🔥</span> : null}
-                                <CareScale scaleValue={plant.light} />
+                                <CareScale careType='water' scaleValue={plant.water} />
+                                <CareScale careType='light' scaleValue={plant.light} />
                             </div>
                         </li>
                         : <li key={plant.id} className='lmj-plant-item'>
                             {plant.name}{plant.isBestSale ? <span>🔥</span> : null}
-                            <CareScale scaleValue={plant.light} />
+                            <CareScale careType='water' scaleValue={plant.water} />
+                            <CareScale careType='light' scaleValue={plant.light} />
                         </li>
                 ))}
             </ul>
